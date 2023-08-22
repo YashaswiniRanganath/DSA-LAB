@@ -1,12 +1,8 @@
-/*lab1
-Write a function that takes an array of integers and its size as arguments. The function should use pointers to find the maximum element in the array and update its value. Here is the function signature int findMax(int* arr, int size)*/
+lab1
+Write a function that takes an array of integers and its size as arguments. The function should use pointers to find the maximum element in the array and update its value. Here is the function signature int findMax(int* arr, int size)
 
 
 #include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-
 int findMax(int* arr, int size)
 {
     int max;
