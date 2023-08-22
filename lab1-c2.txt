@@ -1,0 +1,41 @@
+lab1-c2
+
+prog to manage a student database using structures.
+
+
+#include<stdio.h>
+
+typedef struct studentDetails{
+    char name[20];
+    int roll_no;
+    float marks[3];
+}student;
+
+void scan_details(student *s, int n){
+    for(int i =0 ; i < n; i++){
+        scanf("%s",&s[i].name);
+        scanf("%d",&s[i].roll_no);
+        scanf("%f",&s[i].marks[0]);
+        scanf("%f",&s[i].marks[1]);
+        scanf("%f",&s[i].marks[2]);
+    }
+}
+
+int total_avg(student s[], int student){
+    int total = s[student].marks[0] + s[student].marks[1] + s[student].marks[2];
+    float avg = total/3;
+    return  total;
+}
+
+int main(){
+    int n;
+    scanf("%d",&n);
+    student s[n];
+    scan_details(s,n);
+
+    for(int j = 0 ; j < n; j++){
+        printf("%s %d %d",s[j].name,s[j].roll_no,total_avg(s,j));
+        printf("\n");
+    }
+
+}
