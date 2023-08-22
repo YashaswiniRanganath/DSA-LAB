@@ -1,0 +1,30 @@
+code-3
+
+prog that uses dynamic memory allocation to make an array of integers. (allocate memory using malloc and find or | of all elements in array and display result of all or operation
+
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+  // Get the number of elements from the user.
+  int n;
+  printf("Enter the number of elements: ");
+  scanf(" %d ", &n);
+  // Allocate memory for the array using malloc.
+  int *arr = (int *)malloc(n * sizeof(int));
+  // Get the elements of the array from the user.
+  for (int i = 0; i < n; i++) {
+    printf("Enter element %d: ", i + 1);
+    scanf(" %d ", &arr[i]);
+  }
+  // Find the OR of all the elements in the array.
+  int or = 0;
+  for (int i = 0; i < n; i++) {
+    or |= arr[i];
+  }
+  // Print the result of the OR operation.
+  printf("The OR of all the elements in the array is %d.\n", or);
+  // Free the memory allocated for the array.
+  free(arr);
+  return 0;
+}
