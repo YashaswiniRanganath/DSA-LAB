@@ -1,6 +1,6 @@
-lab1-c2
+/*lab1-c2
 
-prog to manage a student database using structures.
+prog to manage a student database using structures.*/
 
 
 #include<stdio.h>
