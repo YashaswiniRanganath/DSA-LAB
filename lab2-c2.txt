@@ -1,0 +1,127 @@
+/* lab2-c2
+
+add two reversed digit linked list representing non negative integers to obtain the sum as a reversed didgit linked list. */
+
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct linkedList{
+    int val;
+    struct linkedList *next;
+}LL;
+
+LL* insert(LL *head, int val){
+    LL* check = head;
+    if(head == NULL){
+        LL* new = malloc(sizeof(LL));
+        new->val = val;
+        new->next = NULL;
+        head = new;
+        return head;
+    }
+    else{
+        LL* new = malloc(sizeof(LL));
+        new->val = val;
+        while(head->next != NULL){
+            head = head->next;
+        }
+        new->next = NULL;
+        head->next = new;
+        return check;
+    }
+}
+
+LL* addTwoNumbers(LL* l1, LL* l2){
+
+    int carry = 0;
+    int sum = 0;
+    LL* ans = malloc(sizeof(LL));
+    LL* c = ans;
+    c->val = (l1->val + l2->val)%10;
+    carry = (l1->val + l2->val)/10;
+    c->next = NULL;
+    l1 = l1->next;
+    l2 = l2->next;
+    while(l1!=NULL && l2!=NULL){
+        LL* temp = malloc(sizeof(LL));
+        sum = l1->val + l2->val + carry;
+        temp->val = (sum)%10;
+        carry = (sum)/10;
+        temp->next = NULL;
+        c->next = temp;
+        c = temp;
+        l1 = l1->next;
+        l2 = l2->next;
+    }
+    if(l1==NULL){
+        while(l2!=NULL){
+            LL* temp = malloc(sizeof(LL));
+            sum = l2->val + carry;
+            temp->val = (sum) % 10;
+            carry = (sum)/10;
+            temp->next = NULL;
+            c->next = temp;
+            c = temp;
+            l2 = l2->next;
+        }
+        if(carry > 0){
+            LL* temp = malloc(sizeof(LL));
+            temp->val = carry;
+            temp->next = NULL;
+            c->next = temp;
+        }
+        return ans;
+    }
+    else{
+        while(l1!=NULL){
+            LL* temp = malloc(sizeof(LL));
+            sum = l1->val + carry;
+            temp->val = (sum) % 10;
+            carry = (sum)/10;
+            temp->next = NULL;
+            c->next = temp;
+            c = temp;
+            l1 = l1->next;
+        }
+        if(carry > 0){
+            LL* temp = malloc(sizeof(LL));
+            temp->val = carry;
+            temp->next = NULL;
+            c->next = temp;
+        }
+        return ans;
+    }
+}
+
+void display(LL*head){
+    while(head!= NULL){
+        printf("%d ",head->val);
+        head = head->next;
+    }
+    printf("\n");
+}
+
+int main(){
+    int n,m;
+    scanf(" %d %d",&n,&m);
+
+    LL* a = NULL;
+    LL* b = NULL;
+    for(int i = 0; i < n+m;i++){
+        int x;
+        scanf(" %d",&x);
+        if(i<n){
+            a = insert(a,x);
+        }
+        else{
+        b = insert(b,x);
+        }
+    }
+
+    LL* c = NULL;
+    c = addTwoNumbers(a,b);
+
+    display(c);
+
+
+}
