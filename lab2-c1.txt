@@ -1,0 +1,86 @@
+/*lab2-c1
+
+to find midpoint of linked list and then split the list into 2 separete list at that midpoint. */
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+typedef struct Node Node;
+
+Node *readll(int n)
+{
+    Node *temp=NULL;
+    Node *head=NULL;
+    Node *p=NULL;
+    for(int i=0;i<n;++i)
+    {
+        temp=(struct Node *)malloc(sizeof(struct Node));
+        scanf("%d",&temp->data);
+        temp->next=NULL;
+
+        if(head==NULL)
+        {   head=temp;
+        }
+        else{
+        p=head;
+        while(p->next!=NULL)
+            p=p->next;
+        p->next=temp;
+        }
+    }
+    return head;
+
+}
+
+void printll(Node *head,int n)
+{
+    int count=0;
+    Node *p=head;
+    while(p!=NULL)
+    {   count++;
+        printf("%d ",p->data);
+        p=p->next;
+        if(count==n)
+            break;
+    }
+    printf("\n");
+        
+}
+
+void printll2(Node *head,int n, int mid)
+{
+    int count=0;
+    Node *p=head;
+    while(p!=NULL)
+    {   count++;
+        if(count>mid)
+        {    printf("%d ",p->data);
+        }
+     p=p->next;
+    }
+    
+}
+int main() {
+    
+    Node *h;
+    int n;
+    scanf("%d",&n);
+    h=readll(n);
+    int mid;
+    if(n%2!=0)     
+        mid=(n/2)+1;
+    else
+        mid=(n/2);
+    printll(h,mid);
+    printll2(h,n,mid);
+    
+    return 0;
+}
+
