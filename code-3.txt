@@ -1,6 +1,6 @@
-code-3
+/*code-3
 
-prog that uses dynamic memory allocation to make an array of integers. (allocate memory using malloc and find or | of all elements in array and display result of all or operation
+prog that uses dynamic memory allocation to make an array of integers. (allocate memory using malloc and find or | of all elements in array and display result of all or operation */
 
 
 #include <stdio.h>
