@@ -1,20 +1,7 @@
-// 14-09-2023 
-
 /*
 Josephus Problem is a famous theoretical problem in mathematics and computer science. It is a game in which n people stand in a circle, and they are numbered from 1 to n in clockwise order. Starting with a specified person, you count around the circle and eliminate every mth person until only one person remains. The goal of this problem is to find the position of the last person standing.
 
 Write a program to solve the Josephus Problem for a given number of people (n) and a fixed counting interval (m).
-
-Input Format
-
-n: An integer representing the total number of people standing in a circle m: An integer representing the counting interval
-
-Constraints
-
-1 <= n <= 1000 1 <= m <= 1000
-
-Output Format
-
 Return the position (1-based index) of the last person standing.
 
 Sample Input 0
@@ -26,7 +13,7 @@ Sample Output 0
 4
 */
 
-/*
+
 #include<stdio.h>
 #include<stdlib.h>
 int Tell(int n, int m);
@@ -82,7 +69,7 @@ int Tell(int n, int m)
     }
     return 0;
 }
-*/
+
 
 
 /*
@@ -91,18 +78,6 @@ Design a queue data structure using two stacks, stack1 and stack2, that supports
 enqueue(x): Add an element x to the back of the queue. dequeue(): Remove and return the element at the front of the queue. isEmpty(): Return true if the queue is empty, false otherwise. You need to implement these operations efficiently, ensuring that the amortized time complexity for each operation is O(1).
 
 Your task is to implement the queue using the provided stacks and ensure that the operations work as expected.
-
-Input Format
-
-The first line contains an integer, n, representing the number of operations to be performed. Each of the following n lines contains an operation in the following format: ‘1’ x to enqueue an element x. ‘2’ to dequeue an element. ‘3’ to check if the queue is empty.
-
-Constraints
-
-1 ≤ n ≤ 1000
-
-Output Format
-
-For each dequeue operation (operation 2), print the popped value. and for each isEmpty operation, print True if empty, else print False
 
 Sample Input 0
 
@@ -120,7 +95,7 @@ Sample Output 0
 False
 */
 
-/*
+
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 1000
@@ -226,4 +201,3 @@ STACK* dequeue(STACK* stack1)
     return stack1;
 }
 
-*/
