@@ -3,25 +3,6 @@
 /*(1)
 Design and implement an algorithm to convert infix mathematical expressions to postfix notation using a stack data structure. The algorithm should be capable of handling expressions containing operators such as addition (+), subtraction (-), multiplication (*), division (/), and parentheses. The goal is to develop a program that can efficiently and accurately convert infix expressions to postfix notation while respecting operator precedence and parentheses.
 
-Key Requirements:
-
-Accept infix mathematical expressions as input from the user or a file.
-Handle the following operators with correct precedence: + (addition), - (subtraction), * (multiplication), / (division).
-Properly handle parentheses to ensure correct order of operations.
-Output the corresponding postfix notation of the input expression.
-Implement the algorithm using a stack data structure to track operators and operands.
-Input Format
-
-A string representing an infix mathematical expression containing digits, operators, and parentheses.
-
-Constraints
-
-The input expression will be a valid mathematical expression. The input expression length is between 3 and 10^4 characters. The input expression does not contain invalid characters or syntax errors.
-
-Output Format
-
-A string representing the corresponding postfix notation of the input expression.
-
 Sample Input 0
 
 (3+4)*2/(5-2)
@@ -117,18 +98,6 @@ bool valid_brackets(char* s)
 
 /*(2)
 Design an algorithm and implement a program to validate the correctness of a given string containing brackets - parentheses '()', square brackets '[]', and curly braces '{}'. The goal is to determine whether the arrangement of brackets in the input string is valid or not. The validation should follow these rules: 1. Every opening bracket must have a corresponding closing bracket. 2. Brackets must be closed in the correct order, i.e., a closing bracket should match the most recently opened unmatched opening bracket. 3. The input string may contain other characters besides brackets, but they should be ignored during validation. 4. The input string is considered valid if and only if all brackets are properly nested and closed. Your program should return true if the input string is valid, and false otherwise. You should implement this validation using a stack data structure.
-
-Input Format
-
-A string containing brackets and other characters.
-
-Constraints
-
-The input string length is between 1 and 10^4 characters. The input string may contain alphanumeric characters and other symbols besides brackets, which should be ignored during validation.
-
-Output Format
-
-A boolean value: true if the input string has valid bracket arrangement, false otherwise.
 
 Sample Input 0
 
