@@ -30,7 +30,7 @@ Sample Output 0
 34+2*52-/
 */
 
-/*
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -112,7 +112,7 @@ bool valid_brackets(char* s)
     }
     return (stack.top == -1); 
 }
-*/
+
 
 
 /*(2)
@@ -144,7 +144,7 @@ Sample Output 1
 false
 */
 
-/*
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -240,4 +240,3 @@ void infix_to_postfix(char* infix)
     free(stack->array);
     free(stack);
 }
-*/
